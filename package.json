@@ -8,7 +8,8 @@
     "next": "2.0.0-beta.18",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.64.7"
   },
   "scripts": {
     "dev": "next",
