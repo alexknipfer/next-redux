@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import ListView from '../components/ListView/ListView'
 import TodoItem from '../components/TodoItem/TodoItem'
 import { actions } from '../redux/reducers/todo'
 import { bindActionCreators } from 'redux'
@@ -6,15 +7,18 @@ import { connect } from 'react-redux'
 
 class TodoItemContainer extends Component {
     render () {
-        console.log(this.props.state)
         return (
-            <TodoItem />
+            <div>
+                <ListView todoList={this.props.todos} addTodo={this.props.addTodo}/>
+            </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return state
+const mapStateToProps = ({todo: { todos }}) => {
+    return { 
+        todos
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
