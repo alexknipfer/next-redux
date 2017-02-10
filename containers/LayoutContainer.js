@@ -6,17 +6,18 @@ import { connect } from 'react-redux'
 
 class LayoutContainer extends Component {
     render () {
+        const { open , openDimmer, closeDimmer } = this.props
         return (
-            <Layout>
+            <Layout open={open} openDimmer={openDimmer} closeDimmer={closeDimmer}>
                 {this.props.children}
             </Layout>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({navigation: { open }}) => {
     return {
-        state
+        open: open
     }
 }
 
