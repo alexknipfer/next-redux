@@ -10,6 +10,6 @@ export default ({ open, openDimmer, closeDimmer }) => (
                 Panel
             </Menu.Item>
         </Menu>
-        <Dimmer active={open} />
+        <Dimmer active={open} onClickOutside={closeDimmer} />
     </div>
 )
