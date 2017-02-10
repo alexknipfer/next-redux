@@ -3,22 +3,26 @@ export const constants = {
 }
 
 export const actions = {
-    addTodo(itemToAdd) {
+    addTodo(itemName, itemDescription) {
         return {
-            type: ADD_TODO,
-            itemToAdd: itemToAdd
+            type: constants.ADD_TODO,
+            itemToAdd: {itemName, itemDescription}
         } 
     }
 }
 
 export const initialState = {
-    todos: ['hello', 'goodbye']
+    todos: []
 }
 
 export default (state = initialState, action) => {
+    console.log(state)
     switch(action.type) {
         case constants.ADD_TODO:
-            return intialState.todos
+            return {
+                ...state,
+                todos: [...state.todos, action.itemToAdd]
+            }
         default: 
             return state
     }
