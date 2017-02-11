@@ -12,7 +12,6 @@ export default class extends Component {
     }
 
     render () {
-        console.log(this.props.todoList)
         return (
             <Form onSubmit={this.addItem}>
                 <Form.Field>
