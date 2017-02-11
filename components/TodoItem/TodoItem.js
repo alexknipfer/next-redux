@@ -3,8 +3,8 @@ import { List } from 'semantic-ui-react'
 
 export default class extends Component {
 
-    removeItem = (id) => {
-        console.log(this.id)
+    removeItem = (itemId) => {
+        this.props.removeTodo(itemId)
     }
 
     render () {
@@ -14,10 +14,9 @@ export default class extends Component {
                 <List divided relaxed>
                     {
                         this.props.todoList.map((item, id) => {
-                            //console.log(id)
                             return (
                                 <List.Item key={id}>
-                                    <List.Icon name='close' onClick={this.removeItem} link />
+                                    <List.Icon name='close' onClick={() => this.removeItem(item.id)} link />
                                     <List.Content>
                                         <List.Header>
                                             {item.itemName}
