@@ -2,7 +2,7 @@ import AddForm from '../AddForm/AddForm'
 import { Grid } from 'semantic-ui-react'
 import TodoItem from '../TodoItem/TodoItem'
 
-export default ({todoList, addTodo}) => {
+export default ({ todoList, addTodo, removeTodo }) => {
     return (
         <div className='list-view'>
             <Grid padded>
@@ -18,7 +18,7 @@ export default ({todoList, addTodo}) => {
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column>
-                        <TodoItem todoList={todoList} />
+                        <TodoItem todoList={todoList} removeTodo={removeTodo} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
