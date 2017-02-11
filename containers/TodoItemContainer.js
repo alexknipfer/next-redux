@@ -9,7 +9,7 @@ class TodoItemContainer extends Component {
     render () {
         return (
             <div>
-                <ListView todoList={this.props.todos} addTodo={this.props.addTodo}/>
+                <ListView todoList={this.props.todos} addTodo={this.props.addTodo} removeTodo={this.props.removeTodo} />
             </div>
         )
     }
@@ -23,7 +23,8 @@ const mapStateToProps = ({todo: { todos }}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        addTodo: actions.addTodo
+        addTodo: actions.addTodo,
+        removeTodo: actions.removeTodo
     }, dispatch)
 }
 
