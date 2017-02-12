@@ -10,7 +10,7 @@ export default ({ todoList, addTodo, removeTodo }) => {
                     <Grid.Row>
                         <Grid.Column>
                             <Icon name='tasks' size='large' style={{display: 'inline', marginRight: '20px'}}/>
-                            <h2 style={{display: 'inline'}}>List View</h2>
+                            <h2 style={{display: 'inline'}}>My Todos</h2>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
