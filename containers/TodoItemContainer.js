@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import ListView from '../components/ListView/ListView'
 import TodoItem from '../components/TodoItem/TodoItem'
-import { actions } from '../redux/reducers/todo'
+import { actions } from '../redux/modules/todo'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
