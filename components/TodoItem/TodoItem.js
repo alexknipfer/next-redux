@@ -1,10 +1,12 @@
+import { Icon, List } from 'semantic-ui-react'
+
 import { Component } from 'react'
-import { List } from 'semantic-ui-react'
 
 export default class extends Component {
-
-    removeItem = (itemId) => {
-        this.props.removeTodo(itemId)
+    
+    completeItem = (item) => {
+        this.props.addCompletedTodo(item)
+        this.props.removeTodo(item.id)
     }
 
     render () {
@@ -14,13 +16,12 @@ export default class extends Component {
         else {
             return (
                 <div>
-                    <List divided relaxed>
+                    <List divided animated selection>
                         {
                             this.props.todoList.map((item, id) => {
                                 return (
                                     <List.Item key={id}>
-                                        <List.Icon name='close' onClick={() => this.removeItem(item.id)} link />
-                                        <List.Content>
+                                        <List.Content style={{float: 'left'}}>
                                             <List.Header>
                                                 {item.itemName}
                                             </List.Header>
@@ -28,6 +29,19 @@ export default class extends Component {
                                                 {item.itemDescription}
                                             </List.Description>
                                         </List.Content>
+                                        <div className='icons'>
+                                            <Icon 
+                                                name='checkmark' 
+                                                onClick={() => this.completeItem(item)}
+                                                link
+                                            />
+                                        </div>
+                                        <style jsx>{`
+                                            .icons {
+                                                float: right;
+                                                margin-top: 10px;   
+                                            }
+                                        `}</style>
                                     </List.Item>
                                 )
                             })
