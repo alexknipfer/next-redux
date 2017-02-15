@@ -22,7 +22,12 @@ export default ({ todoList, completedTodos, addTodo, removeTodo, removeCompleted
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <TodoItem todoList={todoList} completedTodos={completedTodos} addCompletedTodo={addCompletedTodo} removeTodo={removeTodo} />
+                            <TodoItem 
+                                todoList={todoList}
+                                completedTodos={completedTodos}
+                                addCompletedTodo={addCompletedTodo}
+                                removeTodo={removeTodo}
+                            />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
@@ -31,7 +36,10 @@ export default ({ todoList, completedTodos, addTodo, removeTodo, removeCompleted
                                 completedTodos.length !== 0 &&
                                 <div>
                                     <h3>Completed!</h3>
-                                    <CompletedTodos completedTodos={completedTodos} removeCompletedTodo={removeCompletedTodo} />
+                                    <CompletedTodos
+                                        completedTodos={completedTodos}
+                                        removeCompletedTodo={removeCompletedTodo} 
+                                    />
                                 </div>
                             }
                         </Grid.Column>
