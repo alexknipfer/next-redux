@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import ListView from '../components/ListView/ListView'
 import TodoItem from '../components/TodoItem/TodoItem'
+import TodoView from '../components/TodoView/TodoView'
 import { actions } from '../redux/modules/todo'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,7 +9,7 @@ class TodoItemContainer extends Component {
     render () {
         return (
             <div>
-                <ListView 
+                <TodoView 
                     todoList={this.props.todos}
                     completedTodos={this.props.completedTodos}
                     addTodo={this.props.addTodo} 
