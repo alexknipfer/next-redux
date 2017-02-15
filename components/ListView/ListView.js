@@ -1,8 +1,10 @@
+import { Card, Grid, Icon } from 'semantic-ui-react'
+
 import AddForm from '../AddForm/AddForm'
-import { Card, Icon, Grid } from 'semantic-ui-react'
+import CompletedTodos from '../CompletedTodos/CompletedTodos'
 import TodoItem from '../TodoItem/TodoItem'
 
-export default ({ todoList, addTodo, removeTodo }) => {
+export default ({ todoList, completedTodos, addTodo, removeTodo, removeCompletedTodo, addCompletedTodo }) => {
     return (
         <div className='list-view'>
             <Card>
@@ -20,11 +22,22 @@ export default ({ todoList, addTodo, removeTodo }) => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <TodoItem todoList={todoList} removeTodo={removeTodo} />
+                            <TodoItem todoList={todoList} completedTodos={completedTodos} addCompletedTodo={addCompletedTodo} removeTodo={removeTodo} />
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            {
+                                completedTodos.length !== 0 &&
+                                <div>
+                                    <h3>Completed!</h3>
+                                    <CompletedTodos completedTodos={completedTodos} removeCompletedTodo={removeCompletedTodo} />
+                                </div>
+                            }
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                </Card>
+            </Card>
                 <style jsx>{`
                     .list-view {
                         margin-top: 80px;
