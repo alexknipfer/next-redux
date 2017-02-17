@@ -38,6 +38,8 @@ export const actions = {
     }
 }
 
+// reducer...
+
 export const initialState = {
     todos: [],
     completedTodos: []
