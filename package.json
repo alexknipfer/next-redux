@@ -4,7 +4,7 @@
   "repository": {},
   "license": "MIT",
   "dependencies": {
-    "next": "2.0.0-beta.18",
+    "next": "4.2.3",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
